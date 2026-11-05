@@ -10,19 +10,21 @@
     tools:context=".MainActivity">
 
     <!-- Título de bienvenida -->
+
+    <!-- Cuadrícula (Grid) para las tarjetas -->
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="36dp"
         android:text="¡Bienvenido"
+        android:textColor="#333333"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Cuadrícula (Grid) para las tarjetas -->
     <GridLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
