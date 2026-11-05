@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "800251500742",
+    "project_id": "fir-angelma67",
+    "storage_bucket": "fir-angelma67.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800251500742:android:df4a1d8294961282c75fc7",
+        "android_client_info": {
+          "package_name": "com.example.firebase_angelma67"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2ghrj7ylPsJ9WXHX2AxH5HL_0015bBaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
