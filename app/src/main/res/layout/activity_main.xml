@@ -5,41 +5,41 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="#E8F5E9"
     android:padding="16dp"
     tools:context=".MainActivity">
 
     <!-- Título de bienvenida -->
-
-    <!-- Cuadrícula (Grid) para las tarjetas -->
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="36dp"
-        android:text="¡Bienvenido"
+        android:layout_marginTop="32dp"
+        android:text="¡Bienvenido!"
         android:textColor="#333333"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Cuadrícula 2x2 para las tarjetas -->
     <GridLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:columnCount="2"
         android:rowCount="2"
-        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitulo">
 
-        <!-- Tarjeta Inventario -->
+        <!-- 1. Tarjeta Inventario (Fila 0, Columna 0) -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardInventario"
             android:layout_width="0dp"
-            android:layout_height="140dp"
+            android:layout_height="130dp"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:clickable="true"
@@ -53,30 +53,31 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="12dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="📦"
-                    android:textSize="32sp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="6dp"
                     android:text="Inventario"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333" />
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Tarjeta Platos -->
+        <!-- 2. Tarjeta Platos (Fila 0, Columna 1) -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardPlatos"
             android:layout_width="0dp"
-            android:layout_height="140dp"
+            android:layout_height="130dp"
+            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:clickable="true"
@@ -90,22 +91,98 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="12dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="🍳"
-                    android:textSize="32sp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="6dp"
                     android:text="Platos"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333" />
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 3. Tarjeta Favoritos (Fila 1, Columna 0) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFavoritos"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⭐"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Favoritos"
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 4. Cuarta Tarjeta de relleno o perfil (Fila 1, Columna 1) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPerfil"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚙️"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Ajustes"
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
