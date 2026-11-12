@@ -35,6 +35,7 @@ android {
 dependencies {
     implementation(libs.activity.ktx)
     implementation(libs.appcompat)
+    implementation(libs.cardview)
     implementation(libs.constraintlayout)
     implementation(libs.credentials)
     implementation(libs.credentials.play.services.auth)
@@ -45,6 +46,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
     implementation(platform("com.google.firebase:firebase-bom:34.19.0"))
+    implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-database:22.0.2")
 }
