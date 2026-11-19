@@ -66,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(
                                 baseContext,
                                 "Error al acceder: ${task.exception?.message}",
-                                Toast.LENGTH_LONG
+                                Toast.LENGTH_LONG,
                             ).show()
                         }
                     }
