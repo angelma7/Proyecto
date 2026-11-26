@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_recetas"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Recetas" />
+    <item
+        android:id="@+id/nav_favoritos"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="Favoritos" />
+    <item
+        android:id="@+id/nav_ajustes"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="Ajustes" />
+</menu>
