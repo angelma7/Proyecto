@@ -8,7 +8,6 @@
     android:padding="24dp"
     tools:context=".LoginActivity">
 
-    <!-- Título o Cabecera -->
     <TextView
         android:id="@+id/tvTituloLogin"
         android:layout_width="wrap_content"
@@ -22,9 +21,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Campo de Correo Electrónico (Material Design) -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilEmail"
+        android:id="@+id/tilNombre"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -38,6 +36,29 @@
         app:layout_constraintTop_toBottomOf="@id/tvTituloLogin">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:inputType="textPersonName|textCapWords" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilNombre">
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +67,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo de Contraseña (Material Design con ojito) -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -71,7 +91,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Botón de Iniciar Sesión -->
     <Button
         android:id="@+id/loginbutton"
         android:layout_width="0dp"
@@ -83,7 +102,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tilPassword" />
 
-    <!-- Botón de Registro / Sign Up -->
     <Button
         android:id="@+id/signbutton"
         style="?attr/materialButtonOutlinedStyle"
@@ -96,7 +114,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginbutton" />
 
-    <!-- Imagen decorativa abajo del todo -->
     <ImageView
         android:id="@+id/ivLoginImage"
         android:layout_width="172dp"
