@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var listaClaves: ArrayList<String>
     private lateinit var adaptador: ArrayAdapter<String>
     private lateinit var dbManager: DatabaseManager
+    private lateinit var dbHelper: DbHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         listaClaves = ArrayList()
         adaptador = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaIngredientes)
         lvIngredientes.adapter = adaptador
+
+        dbHelper = DbHelper(this)
 
         val uid = FirebaseAuth.getInstance().currentUser?.uid
         if (uid == null) {
@@ -60,6 +63,8 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            dbHelper.insertarIngrediente(alimento)
+
             dbManager.anadirIngrediente(
                 alimento = alimento,
                 onExito = {
@@ -76,6 +81,7 @@ class MainActivity : AppCompatActivity() {
             val clave = listaClaves[position]
             val alimento = listaIngredientes[position]
             dbManager.eliminarIngrediente(clave)
+            dbHelper.eliminarIngredientePorNombre(alimento)
             Toast.makeText(this, "Eliminado: $alimento", Toast.LENGTH_SHORT).show()
             true
         }
